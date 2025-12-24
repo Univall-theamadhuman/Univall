@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Univall Careers - Join the Future</title>
+  <link rel="website icon" type="png" href="logo.jpg" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #e0f2f1, #ffffff);
+      color: #0f172a;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-radius: 26px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    header img {
+      width: 100px;
+      margin-bottom: 1rem;
+      border-radius: 16px;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9));
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 15));
+    }
+
+    header p {
+      font-size: 1.25rem;
+      opacity: 0.9;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 1rem;
+      animation: slideUp 1.2s ease-in-out;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-weight: 700;
+      color: #0f172a;
+      text-align: center;
+    }
+
+    .job-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .job-card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 40);
+      transition: all 0.4s ease;
+      position: relative;
+      cursor: pointer;
+    }
+
+    .job-card::before {
+      content: "";
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      right: -5px;
+      bottom: -5px;
+      border-radius: 1.5rem;
+      background: linear-gradient(135deg, #00f2fe, #4facfe);
+      z-index: -1;
+      filter: blur(25px);
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+
+    .job-card:hover::before {
+      opacity: 1;
+    }
+
+    .job-card:hover {
+      transform: translateY(-10px) scale(1.02);
+    }
+
+    .job-card h3 {
+      font-size: 1.5rem;
+      color: #1d4ed8;
+      margin-bottom: 0.5rem;
+    }
+
+    .job-card p {
+      font-size: 1rem;
+      color: #475569;
+    }
+
+    .job-card[data-role] {
+      transition: background 0.3s ease;
+    }
+
+    form {
+      background: white;
+      padding: 2rem;
+      margin-top: 3rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 90);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    form input,
+    form textarea,
+    form select {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid #cbd5e1;
+      font-size: 1rem;
+      box-shadow: 0 10px 20px rgba(5, 5, 5, 0.1);
+    }
+
+    form button {
+      background: linear-gradient(135deg, #4f46e5, #3b82f6);
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      border-radius: 0.75rem;
+      font-size: 1.1rem;
+      font-weight: 600;
+
+      cursor: pointer;
+      transition: all 0.4s ease;
+    }
+
+    form button:hover {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      transform: scale(1.07);
+    }
+
+
+    .footer-disclaimer {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      text-align: center;
+      margin-top: 3rem;
+      padding: 0 1rem;
+    }
+
+    .watermark {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(30px);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    .blur-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      backdrop-filter: blur(10px);
+      background: rgba(255, 255, 255, 0.3);
+      z-index: 998;
+      display: none;
+    }
+
+    .thank-you-message {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.1);
+
+      backdrop-filter: blur(15px);
+
+      padding: 3rem 5rem;
+      border-radius: 20px;
+      color: rgba(14, 13, 13, 0.829);
+
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      z-index: 999;
+      display: none;
+      animation: popUp 0.6s ease forwards;
+      border: 2px solid rgba(135, 206, 250, 0.7);
+
+      box-shadow: 0 0 20px rgba(135, 206, 250, 0.9);
+
+    }
+
+    .timer {
+      font-size: 1.5rem;
+      color: rgba(10, 10, 10, 0.801);
+      margin-top: 1rem;
+      animation: fadeIn 1s ease-in-out forwards;
+    }
+
+    .confetti-canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1000;
+      display: none;
+    }
+
+    @keyframes popUp {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(0.8);
+      }
+
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+      }
+    }
+
+    .celebration-icon {
+      font-size: 3rem;
+      text-align: center;
+      animation: float 3s ease-in-out infinite, bounce 2s ease-in-out infinite;
+      display: inline-block;
+      color: #080808;
+      position: relative;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes bounce {
+      0% {
+        transform: translateY(0);
+      }
+
+      20% {
+        transform: translateY(-10px);
+      }
+
+      40% {
+        transform: translateY(0);
+      }
+
+      60% {
+        transform: translateY(-5px);
+      }
+
+      80% {
+        transform: translateY(0);
+      }
+
+      100% {
+        transform: translateY(0);
+      }
+    }
+
+    #uniqueId {
+      margin-top: 10px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+      letter-spacing: 1px;
+      border-radius: 5000px;
+      color: #ced6df;
+
+      background: linear-gradient(135deg, #c6d0e9, #2c5ee7);
+      box-shadow: 0 10px 30px rgba(5, 5, 5, 30);
+
+    }
+
+
+    .document-links {
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .document-links a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: 2px solid #3b82f6;
+      border-radius: 8px;
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .document-links a:hover {
+      background: #3b82f6;
+      color: white;
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 10);
+      /* Increased opacity */
+      backdrop-filter: blur(10px);
+      /* Stronger blur */
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+      z-index: 100;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Bottom Modal */
+    .bottom-modal {
+      position: fixed;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: rgba(255, 253, 253, 0.932);
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 15);
+      transition: transform 0.6s ease, bottom 0.6s ease;
+      /* Smooth transition */
+      z-index: 101;
+      padding: 1rem;
+      overflow-y: auto;
+      transform: translateY(100%);
+    }
+
+    .bottom-modal.active {
+      bottom: 0;
+      transform: translateY(0%);
+    }
+
+    /* Handle */
+    .modal-handle {
+      width: 50px;
+      height: 6px;
+      background: #0e0d0d;
+      border-radius: 3px;
+      margin: 0 auto 12px auto;
+    }
+
+    /* Close Button */
+    .modal-close {
+      text-align: right;
+      font-weight: bold;
+      cursor: pointer;
+      color: #080808;
+      margin-bottom: 10px;
+    }
+
+    /* Contact Button */
+    .contact-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #3b82f6;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-button:hover {
+      background-color: #2563eb;
+    }
+
+
+  </style>
+
+  
+
+</head>
+
+<body>
+  <header>
+    <img src="logo.jpg" alt="Univall Logo">
+    <h1>Careers at Univall</h1>
+    <p>Empower the future. Work with innovators. Grow with us.</p>
+  </header>
+
+  <div class="container">
+    <div class="section-title">We're Hiring</div>
+    <div class="job-grid">
+      <div class="job-card" onclick="applyFor('Frontend Developer')">
+        <h3>Frontend Developer</h3>
+        <p>Remote | Full-Time</p>
+      </div>
+      <div class="job-card" onclick="applyFor('Backend Engineer')">
+        <h3>Backend Engineer</h3>
+        <p>Remote | Full-Time</p>
+      </div>
+      <div class="job-card" onclick="applyFor('AI Product Architect')">
+        <h3>AI Product Architect</h3>
+        <p>Remote | Part-Time</p>
+      </div>
+      <div class="job-card" onclick="applyFor('AI/ML Engineer')">
+        <h3>AI/ML Engineer</h3>
+        <p>Remote | Full-Time</p>
+      </div>
+      <div class="job-card" onclick="applyFor('Graphic Designer')">
+        <h3>Graphic Designer</h3>
+        <p>Remote | Full-Time</p>
+      </div>
+      <div class="job-card" onclick="applyFor('Full-Stack Developer')">
+        <h3>Full-Stack Developer</h3>
+        <p>Remote | Full-Time</p>
+      </div>
+    </div>
+
+    <div class="section-title">Apply Now</div>
+
+
+
+    <form onsubmit="handleSubmit(event)" action="..." method="POST" enctype="multipart/form-data">
+
+
+
+
+      <input type="text" id="uniqueId" name="uniqueId" placeholder="Unique ID" readonly required>
+
+      <input type="text" name="name" placeholder="Full Name" required>
+      <input type="email" name="email" placeholder="Email Address" required>
+      <input type="text" name="position" placeholder="Role You're Applying For" required>
+      <input type="file" name="resume" required>
+      <label><input type="checkbox" required> I agree to the NDA & Hiring Terms</label>
+      <button type="submit">Submit Application</button>
+    </form>
+
+    <div class="document-links">
+      <h3>View Documents</h3>
+      <a href="#" class="open-modal" data-doc="hiring">View Hiring Agreement</a>
+      <a href="#" class="open-modal" data-doc="nda">View NDA Agreement</a>
+    </div>
+
+    <!-- Modal and Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="bottom-modal" id="bottomModal">
+      <div class="modal-handle"></div>
+      <div class="modal-close" id="modalClose">✖</div>
+      <div class="modal-content" id="modalContent">
+        <!-- Content will be dynamically injected -->
+      </div>
+    </div>
+
+
+    <div class="watermark">© 2025 Univall. All rights reserved.</div>
+  </div>
+
+  <div id="blurOverlay" class="blur-overlay"></div>
+
+  <canvas id="confettiCanvas" class="confetti-canvas"></canvas>
+
+  <div id="thankYouMessage" class="thank-you-message">
+    🎉 Thank You for Applying! 🎉
+  </div>
+
+  <script>
+
+
+    function generateUniqueId() {
+      const prefix = "UNIVALL-2025-";
+      const randomPart = Math.random().toString(36).substring(2, 12).toUpperCase();
+      return prefix + randomPart;
+    }
+
+
+    window.onload = function () {
+      document.getElementById('uniqueId').value = generateUniqueId();
+    };
+
+
+
+
+
+
+
+
+
+
+
+    function applyFor(role) {
+      document.querySelector('input[name="position"]').value = role;
+      window.scrollTo({ top: document.querySelector('form').offsetTop, behavior: 'smooth' });
+    }
+    src = "https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"
+
+    function handleSubmit(event) {
+      event.preventDefault();
+
+      document.getElementById('blurOverlay').style.display = 'block';
+
+      const thankYouMessage = document.getElementById('thankYouMessage');
+      thankYouMessage.style.display = 'block';
+
+      const celebrationIcon = document.createElement('div');
+      celebrationIcon.classList.add('celebration-icon');
+      celebrationIcon.innerHTML = `🎉 Best of luck 🎉`;
+      thankYouMessage.appendChild(celebrationIcon);
+
+      const canvas = document.getElementById('confettiCanvas');
+      canvas.style.display = 'block';
+      const myConfetti = confetti.create(canvas, {
+        resize: true,
+        useWorker: true,
+        particleCount: 700,
+        spread: 250,
+        gravity: -0.2,
+        ticks: 350,
+        scalar: 1.3,
+      });
+
+      function fireConfetti() {
+        myConfetti({
+          particleCount: 300,
+          spread: 250,
+          origin: { x: 0, y: 1 },
+          gravity: -0.2,
+          scalar: 1.3
+        });
+        myConfetti({
+          particleCount: 300,
+          spread: 250,
+          origin: { x: 0.5, y: 1 },
+          gravity: -0.2,
+          scalar: 1.3
+        });
+        myConfetti({
+          particleCount: 300,
+          spread: 250,
+          origin: { x: 1, y: 1 },
+          gravity: -0.2,
+          scalar: 1.3
+        });
+      }
+
+      let count = 0;
+      let interval = setInterval(() => {
+        fireConfetti();
+        count++;
+        if (count >= 3) {
+          clearInterval(interval);
+        }
+      }, 500);
+
+      let timeLeft = 10;
+      const timerElement = document.createElement('div');
+      timerElement.classList.add('timer');
+      timerElement.innerHTML = `Redirecting in ${timeLeft} seconds...`;
+      thankYouMessage.appendChild(timerElement);
+
+      const timerInterval = setInterval(() => {
+        timeLeft--;
+        timerElement.innerHTML = `Redirecting in ${timeLeft} seconds...`;
+
+        if (timeLeft === 0) {
+          clearInterval(timerInterval);
+          window.location.href = 'https://theunivall.com';
+        }
+      }, 1000);
+    }
+
+
+
+    document.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+    })
+
+
+    document.addEventListener("keydown", function (e) {
+      if (e.ctrlKey && (e.key === "u" || e.key === "u")) {
+        e.preventDefault();
+      }
+
+
+      if (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i")) {
+        e.preventDefault();
+      }
+      if (e.key === "F12") {
+        e.preventDefault();
+      }
+    })
+
+
+
+    document.querySelectorAll('.open-modal').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const docType = btn.getAttribute('data-doc');
+
+        let docName = "";
+        let content = "";
+        let contactMessage = `
+          <p><strong>Note:</strong> Documents will only be accessible after applying. If you are interested, please contact us for further details and access.</p>
+        `;
+
+        if (docType === 'hiring') {
+          docName = "Hiring Agreement";
+          content = "This agreement sets forth the terms and conditions of employment between Univall and the employee.";
+        } else if (docType === 'nda') {
+          docName = "NDA Agreement";
+          content = "This Non-Disclosure Agreement ('Agreement') is entered into to maintain confidentiality between Univall and the recipient.";
+        }
+
+        modalContent.innerHTML = `
+          <h3>Document Name: ${docName}</h3>
+          <p>${content}</p>
+          ${contactMessage}
+          <a href="mailto:Univall@theunivall.com" class="contact-button">Contact Us</a>
+        `;
+
+        modalOverlay.classList.add('active');
+        bottomModal.classList.add('active');
+      });
+    });
+
+    modalOverlay.addEventListener('click', closeModal);
+    modalClose.addEventListener('click', closeModal);
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      bottomModal.classList.remove('active');
+    }
+
+    // Touch drag to close
+    let startY = 0;
+    let currentY = 0;
+    let isDragging = false;
+
+    bottomModal.addEventListener('touchstart', (e) => {
+      startY = e.touches[0].clientY;
+      isDragging = true;
+    });
+
+    bottomModal.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      currentY = e.touches[0].clientY;
+      let delta = currentY - startY;
+      if (delta > 0) {
+        bottomModal.style.transform = `translateY(${delta}px)`;
+      }
+    });
+
+    bottomModal.addEventListener('touchend', () => {
+      isDragging = false;
+      if (currentY - startY > 100) {
+        closeModal();
+      } else {
+        bottomModal.style.transform = `translateY(0%)`;
+      }
+    });
+
+  </script>
+
+</body>
+
+</html>

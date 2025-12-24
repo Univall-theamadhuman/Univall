@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invest in Univall</title>
+
+  <link rel="website icon" type="png" href="logo.jpg" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(to right, #f1f5f9, #e2e8f0);
+      color: #1e293b;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e3a8a);
+      color: white;
+      padding: 3rem 1rem;
+      border-radius: 26px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    }
+
+    header .logo {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      width: 80px;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 20));
+      border-radius: 16px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+      animation: fadeInDown 1s ease-out;
+      filter: drop-shadow(0 0 5px rgba(255, 255, 255, 15));
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      color: #dbeafe;
+      font-size: 1.1rem;
+      animation: fadeInUp 1.2s ease-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1rem;
+      animation: fadeInUp 1s ease;
+    }
+
+    .offer {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 100);
+      margin-bottom: 2rem;
+      transition: all 0.4s ease;
+      border-left: 6px solid #3b82f6;
+    }
+
+    .offer:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 25px rgba(59, 130, 246, 90);
+    }
+
+    .offer h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .offer ul li {
+      margin: 0.75rem 0;
+    }
+
+    form {
+      background: #ffffff;
+      padding: 2rem;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 90);
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      transition: 0.3s ease;
+      font-size: 1rem;
+      box-shadow: 0 10px 20px rgba(5, 5, 5, 0.1);
+    }
+
+    input:focus,
+    textarea:focus {
+      outline: none;
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5);
+    }
+
+    button {
+      background: #3b82f6;
+      color: white;
+      border: none;
+      padding: 0.8rem 2.2rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      animation: pulse 2s infinite;
+      transition: 0.3s ease;
+    }
+
+    button:hover {
+      background: #1e40af;
+      transform: scale(1.04);
+    }
+
+
+
+    .footer-disclaimer {
+      font-size: 0.75rem;
+      color: #94a3b8;
+      text-align: center;
+      margin-top: 3rem;
+      padding: 0 1rem;
+    }
+
+    .watermark {
+      text-align: center;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.4);
+      }
+
+      70% {
+        box-shadow: 0 0 0 10px rgba(59, 130, 246, 0);
+      }
+
+      100% {
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0);
+      }
+    }
+
+    #uniqueId {
+      margin-top: 10px;
+      text-align: center;
+      font-weight: bold;
+      font-size: 15px;
+      letter-spacing: 1px;
+      border-radius: 5000px;
+      color: #ced6df;
+      background: linear-gradient(135deg, #c6d0e9, #2c5ee7);
+      box-shadow: 0 10px 30px rgba(5, 5, 5, 30);
+    }
+
+
+    .document-links {
+      margin-top: 2.5rem;
+      text-align: center;
+    }
+
+    .document-links a {
+      display: inline-block;
+      margin: 0.5rem;
+      padding: 0.5rem 1rem;
+      border: 2px solid #3b82f6;
+      border-radius: 8px;
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .document-links a:hover {
+      background: #3b82f6;
+      color: white;
+    }
+
+    /* Modal Overlay */
+    .modal-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 10);
+      /* Increased opacity */
+      backdrop-filter: blur(10px);
+      /* Stronger blur */
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.6s ease, visibility 0.6s ease;
+      z-index: 100;
+    }
+
+    .modal-overlay.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    /* Bottom Modal */
+    .bottom-modal {
+      position: fixed;
+      bottom: -100%;
+      left: 0;
+      width: 100%;
+      height: 50%;
+      background: rgba(255, 253, 253, 0.932);
+      border-top-left-radius: 16px;
+      border-top-right-radius: 16px;
+      box-shadow: 0 -4px 10px rgba(0, 0, 0, 15);
+      transition: transform 0.6s ease, bottom 0.6s ease;
+      /* Smooth transition */
+      z-index: 101;
+      padding: 1rem;
+      overflow-y: auto;
+      transform: translateY(100%);
+    }
+
+    .bottom-modal.active {
+      bottom: 0;
+      transform: translateY(0%);
+    }
+
+    /* Handle */
+    .modal-handle {
+      width: 50px;
+      height: 6px;
+      background: #0e0d0d;
+      border-radius: 3px;
+      margin: 0 auto 12px auto;
+    }
+
+    /* Close Button */
+    .modal-close {
+      text-align: right;
+      font-weight: bold;
+      cursor: pointer;
+      color: #080808;
+      margin-bottom: 10px;
+    }
+
+    /* Contact Button */
+    .contact-button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background-color: #3b82f6;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-button:hover {
+      background-color: #2563eb;
+    }
+  </style>
+
+
+
+
+</head>
+
+<body>
+  <header>
+    <img class="logo" src="logo.jpg" alt="Univall Logo">
+    <h1>Invest in Univall</h1>
+    <p>Fuel innovation. Grow with us.</p>
+  </header>
+  <div class="container">
+    <div class="offer">
+      <h2>Investment Opportunity</h2>
+      <ul>
+        <li><strong>1 Lakh INR = 1% Equity</strong></li>
+        <li>Minimum Investment: 1 Lakh INR</li>
+        <li>Maximum Limit: 25% Equity Per Investor</li>
+        <li>Includes Official Agreement & Pitch Deck</li>
+        <li>Exclusive Benefits for Early Investors</li>
+      </ul>
+    </div>
+
+    <h2>Submit Your Interest</h2>
+
+
+    <form onsubmit="handleSubmit(event)" method="POST">
+
+      <input type="text" id="uniqueId" name="uniqueId" placeholder="Unique ID" readonly required>
+      <input type="text" name="name" placeholder="Your Full Name" required>
+      <input type="email" name="email" placeholder="Your Email Address" required>
+      <input type="number" name="investment" placeholder="Amount to Invest (INR)" required>
+      <textarea name="message" rows="5" placeholder="Tell us why you're investing" required></textarea>
+      <label><input type="checkbox" required> I agree to the Investor Agreement</label><br><br>
+      <button type="submit">Submit Interest</button>
+    </form>
+
+
+
+
+    <div class="document-links">
+      <h3>View Documents</h3>
+      <a href="#" class="open-modal" data-doc="hiring">View Invester Agreement</a>
+      <a href="#" class="open-modal" data-doc="nda">View Pitch
+        Deck</a>
+    </div>
+
+    <!-- Modal and Overlay -->
+    <div class="modal-overlay" id="modalOverlay"></div>
+    <div class="bottom-modal" id="bottomModal">
+      <div class="modal-handle"></div>
+      <div class="modal-close" id="modalClose">✖</div>
+      <div class="modal-content" id="modalContent">
+        <!-- Content will be dynamically injected -->
+      </div>
+    </div>
+
+    <div class="footer-disclaimer">
+      *This is not a public offer. Univall reserves the right to accept or reject any proposal. All equity deals are
+      goverment by ROC and SEBI compliance where applicable.*
+    </div>
+    <div class="watermark">© 2025 Univall. All rights reserved.</div>
+  </div>
+
+
+
+  <script>
+    // Random Unique ID generate karne ka function
+    function generateUniqueId() {
+      const prefix = "UNIVALL-INVESTER-2025-";
+      const randomPart = Math.random().toString(26).substring(2, 12).toUpperCase();
+      return prefix + randomPart;
+    }
+
+    // Page load hone ke baad Unique ID auto-fill kar de form me
+    window.onload = function () {
+      document.getElementById('uniqueId').value = generateUniqueId();
+    };
+
+
+    document.addEventListener("contextmenu", function (e) {
+      e.preventDefault();
+    })
+
+    document.addEventListener("keydown", function (e) {
+      if (e.ctrlKey && (e.key === "u" || e.key === "u")) {
+        e.preventDefault();
+      }
+
+
+      if (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i")) {
+        e.preventDefault();
+      }
+      if (e.key === "F12") {
+        e.preventDefault();
+      }
+    })
+
+
+
+
+    document.querySelectorAll('.open-modal').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        const docType = btn.getAttribute('data-doc');
+
+        let docName = "";
+        let content = "";
+        let contactMessage = `
+          <p><strong>Note:</strong> Documents will only be accessible after applying. If you are interested, please contact us for further details and access.</p>
+        `;
+
+        if (docType === 'hiring') {
+          docName = "Invester Agreement";
+          content = "This agreement sets forth the terms and conditions of employment between Univall and the employee.";
+        } else if (docType === 'nda') {
+          docName = "Pitch Deck";
+          content = "This Non-Disclosure Agreement ('Agreement') is entered into to maintain confidentiality between Univall and the recipient.";
+        }
+
+        modalContent.innerHTML = `
+          <h3>Document Name: ${docName}</h3>
+          <p>${content}</p>
+          ${contactMessage}
+          <a href="mailto:Univall@theunivall.com" class="contact-button">Contact Us</a>
+        `;
+
+        modalOverlay.classList.add('active');
+        bottomModal.classList.add('active');
+      });
+    });
+
+    modalOverlay.addEventListener('click', closeModal);
+    modalClose.addEventListener('click', closeModal);
+
+    function closeModal() {
+      modalOverlay.classList.remove('active');
+      bottomModal.classList.remove('active');
+    }
+
+    // Touch drag to close
+    let startY = 0;
+    let currentY = 0;
+    let isDragging = false;
+
+    bottomModal.addEventListener('touchstart', (e) => {
+      startY = e.touches[0].clientY;
+      isDragging = true;
+    });
+
+    bottomModal.addEventListener('touchmove', (e) => {
+      if (!isDragging) return;
+      currentY = e.touches[0].clientY;
+      let delta = currentY - startY;
+      if (delta > 0) {
+        bottomModal.style.transform = `translateY(${delta}px)`;
+      }
+    });
+
+    bottomModal.addEventListener('touchend', () => {
+      isDragging = false;
+      if (currentY - startY > 100) {
+        closeModal();
+      } else {
+        bottomModal.style.transform = `translateY(0%)`;
+      }
+    });
+
+  </script>
+
+
+
+
+</body>
+
+</html>

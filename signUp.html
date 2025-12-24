@@ -1,0 +1,128 @@
+<html>
+
+<head>
+    <title>
+        Univall - Sign up
+    </title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="sginup.css" />
+    <link rel="website icon" type="png" href="logo.jpg" />
+    <meta name="google-signin-client_id" content="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com">
+
+
+
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        function onSignIn(googleUser) {
+            var profile = googleUser.getBasicProfile();
+            console.log('ID: ' + profile.getId());
+            console.log('Name: ' + profile.getName());
+            console.log('Image URL: ' + profile.getImageUrl());
+            console.log('Email: ' + profile.getEmail());
+            // Redirect to another page after successful sign-in
+            window.location.href = "success.html";
+        }
+
+        function signIn() {
+            gapi.load('auth2', function () {
+                var auth2 = gapi.auth2.init({
+                    client_id: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+                });
+                auth2.signIn().then(onSignIn);
+            });
+        }
+
+
+
+        document.addEventListener("contextmenu", function (e) {
+                        e.preventDefault();
+                    })
+
+        document.addEventListener("keydown", function (e) {
+            if (e.ctrlKey && (e.key === "u" || e.key === "u")) {
+                e.preventDefault();
+            }
+
+
+            if (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i")) {
+                e.preventDefault();
+            }
+            if (e.key === "F12") {
+                e.preventDefault();
+            }
+        })
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="left-section">
+            <div class="logo">
+                <img alt="Univall Logo" src="Sign In9.png" />
+
+            </div>
+            <h2>
+                First, enter your email
+            </h2>
+            <p>
+                We suggest using the email address you use at work.
+            </p>
+            <div class="input-group">
+                <input placeholder="name@work-email.com" type="email" />
+
+                <button class="btn btn-primary" onclick="window.location.href='commingsoon.html'">
+
+                    Continue
+
+
+                </button>
+
+
+            </div>
+            <div class="divider">
+                <span>
+                    OR
+                </span>
+            </div>
+            <button class="google-btn" onclick="onSignIn">
+                <i class="fas fa-google">
+                </i>
+                Continue with Google
+            </button>
+            <div class="footer">
+                <p>
+                    Already using Univall
+                    <i class="far fa-thumbs-up">
+                    </i>
+                </p>
+                <a href="#">
+                    Open Univall
+                </a>
+            </div>
+            <div class="nav">
+                <a href="pripolicy.html">Privacy & Terms</a>
+                <a href="#">Contact Us</a>
+            </div>
+        </div>
+
+
+
+    </div>
+
+
+
+
+
+
+
+
+</body>
+
+</html>

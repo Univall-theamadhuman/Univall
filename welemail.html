@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Welcome to Univall</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      padding: 20px;
+      margin: 0;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: #ffffff;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 100);
+      opacity: 0;
+      transform: translateY(40px);
+      animation: fadeInUp 1.2s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    }
+
+    .logo {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin: 0 auto 20px;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 50);
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .header {
+      background: linear-gradient(135deg, #fafafa, #f0f0f0);
+      border-radius: 16px;
+      padding: 30px 25px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .header:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .header h1 {
+      color: #1c1e21;
+      margin: 0;
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .content {
+      color: #333333;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 25px;
+      padding: 12px 28px;
+      background-color: #007aff;
+      color: #ffffff;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 500;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .button:hover {
+      background-color: #005ee0;
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+      transform: translateY(-2px);
+    }
+
+    .footer {
+      font-size: 12px;
+      color: #999999;
+      text-align: center;
+      margin-top: 35px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="logo.jpg" alt="Logo" class="logo" />
+
+    <div class="header">
+      <h1>Welcome to Univall</h1>
+    </div>
+
+    <div class="content">
+      <p>Dear [User's First Name],</p>
+      <p>We’re absolutely delighted to welcome you to the <strong>Univall</strong> community — a space thoughtfully
+        crafted to empower you, inspire meaningful connections, and elevate your digital experience.</p>
+      <p>By signing up, you’ve joined a forward-thinking platform dedicated to innovation, trust, and a user-first
+        approach. Every feature has been designed with care to help you connect, grow, and thrive in ways that feel
+        effortless and rewarding.</p>
+      <p>Ready to begin your journey? Start by completing your profile and exploring the possibilities that await you.
+      </p>
+      <a href="[Your App Link]" class="button">Explore Now</a>
+      <p>If you have any questions or need assistance along the way, our dedicated support team is always here for you.
+      </p>
+      <p>Thank you for choosing Univall. We’re honored to be a part of your story — and we can’t wait to see where this
+        journey takes us, together.</p>
+      <p>With warmth and appreciation,<br />
+        <strong>The Univall Team</strong>
+      </p>
+    </div>
+    <div class="footer">
+      This is an automated message. If you did not register for Univall, please disregard this email or contact us
+      directly.
+    </div>
+  </div>
+</body>
+
+</html>

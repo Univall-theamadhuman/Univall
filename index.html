@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>
+        Univall
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="website icon" type="png" href="logo.jpg" />
+
+
+</head>
+
+<body>
+
+
+
+    <div id="popupModal" class="modal">
+        <div class="modal-content">
+            <h2>We Are Hiring & Open for Investment</h2>
+            <p>Univall is growing! Join our team or be part of our journey as an investor.</p>
+            <div class="modal-buttons">
+                <button onclick="goToSection('hiringCard')">Explore Hiring</button>
+                <button onclick="goToSection('investorCard')">Become an Investor</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <div class="container">
+        <div class="header">
+            <img alt="Univall logo" src="logo.jpg" />
+
+
+            <div>
+                <a href="signUp.html">
+                    Login
+                </a>
+                <a class="register" href="signUp.html">
+                    Register
+                </a>
+            </div>
+        </div>
+        <div class="welcome-section , border-glow">
+            <h1>
+                Welcome
+            </h1>
+
+            <p class="text-lg mb-6 text-center italic text-glow">
+                <span id="typed"></span>
+            </p>
+
+
+            <a class="btn" target="_blank" href="signUp.html">
+                Sign up for free
+
+            </a>
+
+        </div>
+
+
+        <div class="margintop"></div>
+
+
+
+
+
+
+        <div class="bg-black flex items-center justify-center min-h-screen">
+            <div class="space-y-4">
+                <div class="flex justify-start">
+                    <div id="bubble1"
+                        class="bg-white text-black text-lg font-light px-4 py-2 rounded-full border-2 border-blue-500 typing glow chat-hover">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <div id="bubble2"
+                        class="bg-white text-black text-lg font-light px-4 py-2 rounded-full border-2 border-blue-500 typing glow text-glow chat-hover">
+                        <span></span>
+                    </div>
+                </div>
+                <div class="flex justify-start">
+                    <div id="bubble3"
+                        class="bg-white text-black text-lg font-light px-4 py-2 rounded-full border-2 border-blue-500 flex items-center typing glow chat-hover">
+                        <i class="far fa-smile  mr-2"></i><span></span>
+                    </div>
+                </div>
+                <div class="flex justify-end">
+                    <div id="bubble4"
+                        class="bg-white text-black text-lg font-light px-4 py-2 rounded-full border-2 border-blue-500 flex items-center typing glow text-glow chat-hover">
+                        <i class="far fa-smile mr-2"></i> <span></span>
+                    </div>
+                </div>
+
+
+
+                <section class="relative p-10 my-16 flex justify-center">
+                    <!-- Colorful Blurred Moving Background -->
+                    <div
+                        class="absolute w-[320px] h-[380px] bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 rounded-3xl blur-xl opacity-70 z-0 animate-float">
+                    </div>
+
+                    <!-- Foreground Glass Card -->
+                    <div
+                        class="relative z-10 w-[300px] h-[360px] bg-white/20 backdrop-blur-lg rounded-3xl shadow-x5 flex flex-col items-center justify-center text-white p-6 text-center">
+
+                        <!-- Logo with black smoke aura -->
+                        <div class="logo-container mb-4">
+                            <img src="logo.jpg" alt="App Logo" class="logo-img" />
+                        </div>
+
+                        <h2 class="text-xl font-bold mb-4">Download Our App</h2>
+
+                        <button id="downloadBtn" class="download-btn">
+                            Download App
+                        </button>
+
+                    </div>
+
+                    <!-- Popup -->
+                    <div id="popup" class="popup-modal hidden">
+                        <div class="popup-content">
+                            <h3 class="popup-title">Automatic Installation In Progress</h3>
+                            <p class="popup-message">
+
+
+                                Our application will now begin automatic installation on your device.
+                                If the installation fails for any reason, you will promptly receive an email
+                                notification.
+
+                                To ensure a smooth and successful installation, please make sure that your Gmail account
+                                is registered
+                                with our company’s system.
+                                This is necessary because the installation process is authorized and managed through our
+                                internal
+                                deployment services linked to your registered Gmail.
+
+                                If your Gmail is already registered with us, no further action is required.
+                            </p>
+                            <button id="closeBtn" class="popup-close-btn">
+                                Return to Main Page
+                            </button>
+                        </div>
+                    </div>
+
+                </section>
+
+
+                <section id="hiringInvestorCards" class="card-section">
+                    <div class="info-card">
+                        <h3>Join Our Growing Team</h3>
+                        <p>We’re looking for passionate and skilled individuals to build the future with us. Explore
+                            exciting career opportunities at Univall.</p>
+                        <button id="btnhiring" onclick="location.href='hring_team.html'" ">See Open Positions</button>
+                     </div>
+                      <div class=" info-card">
+                            <h3>Partner with Univall</h3>
+                            <p>Believe in innovation? Invest in our mission and become a part of our vision. Get 1%
+                                equity
+                                for every ₹1 Lakh you invest.</p>
+                            <button id="btninvester" onclick="location.href='invester.html'" >Start Investing</button>
+                        </div>
+
+                         <div class="info-card">
+                        <h3>Become a Founding Members of Univall</h3>
+                        <p>Not everyone gets this chance.
+                            Be part of the original circle shaping Univall's future
+                        </p>
+                        <button id="btnhiring" onclick="location.href='univallfoundingmember.html'" >View Eligibilty</button>
+                     </div>
+                    </section>
+                    
+                    <div class=" card">
+
+                                <img src="Image 5.png" alt="Nature 1">
+                                <div class="card-content">
+                                    <h2>
+
+                                        High security
+
+                                    </h2>
+                                    <p>
+                                        Secured by a system beyond visibility — where every move is guarded, even before
+                                        it happens.
+                                    </p>
+                                </div>
+                                <div class="card-extra">
+                                    <p>
+                                        At Univall, your social connections meet unbreakable security. As a pioneering
+                                        social media
+                                        platform,
+                                        we’ve
+                                        built a fortress around your privacy — powered by intelligent, next-generation
+                                        defenses that protect
+                                        every
+                                        message, every post, and every interaction. Our advanced security system works
+                                        silently behind the
+                                        scenes,
+                                        constantly adapting and evolving to block threats before they even arise. With
+                                        Univall, you don’t
+                                        just
+                                        share
+                                        moments — you do it with complete peace of mind, knowing your digital world is
+                                        safeguarded by the
+                                        most
+                                        sophisticated protection ever created for social media.
+
+                                        And this is just the beginning — we are committed to bringing even more
+                                        groundbreaking security
+                                        features,
+                                        leveraging AI, quantum-safe encryption, and predictive threat analysis to keep
+                                        you steps ahead of
+                                        any
+                                        future risks. At Univall, the future of social media security is already here.
+                                    </p>
+                                </div>
+                                <div class="toggle-arrow">
+                                    <span class="arrow">&#9660;</span>
+                                </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="card">
+                        <img src="Image 6.png" alt="Nature 2">
+                        <div class="card-content">
+                            <h2>Editing tool</h2>
+                            <p>Next-gen video editing — where creativity meets cinematic perfection</p>
+                        </div>
+                        <div class="card-extra">
+                            <p>At Univall, we’re redefining social media by bringing revolutionary video editing
+                                capabilities directly
+                                to your fingertips. More than just sharing moments, our platform empowers you with
+                                cutting-edge editing
+                                tools designed to enhance, transform, and personalize your content like never before.
+                                Built with
+                                advanced
+                                AI-driven effects, seamless real-time editing, and intuitive controls, Univall ensures
+                                your creativity
+                                flows
+                                without limits. And this is only the beginning — we’re continuously innovating to
+                                introduce next-level
+                                features that will set new standards for social media content creation. With Univall,
+                                the future of
+                                social
+                                storytelling starts here.</p>
+                        </div>
+                        <div class="toggle-arrow">
+                            <span class="arrow">&#9660;</span>
+                        </div>
+                    </div>
+
+
+                    <div class="sharecon">
+                        <div class="image-container">
+                            <div class="dotted-background">
+
+
+                            </div>
+                            <img alt="Scrabble tiles spelling out 'SOCIAL MEDIA' on a blue background with scattered tiles around"
+                                src="Image 10.png" />
+                        </div>
+
+
+
+                        <div class="content">
+                            <h2>
+                                Share
+                            </h2>
+                            <p>
+                                Here you can inspire many people by sharing your daily activities and your creative
+                                ideas.
+                                Via posts and
+                                v share in Univall stay socially connected with your friends and family. It is your
+                                thoughts
+                                that
+                                connect humans to humans or you all keep learning something new by sharing it with each
+                                other. Univall
+                                provides you a high security so you can trust it without thinking anything.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="blog-section">
+                        <h2>
+                            Take a deeper dive into new way to univall
+                        </h2>
+                        <div class="blogs">
+                            <div class="blog">
+                                <img alt=" Chat Allow image" src="Image 12.png" />
+                                <h3>
+                                    Chat Allow
+                                </h3>
+                                <p>
+                                    This is very unique and our special future where you can disconnect posts and allow
+                                    only
+                                    inbox chat.
+                                </p>
+
+                            </div>
+                            <div class="blog">
+                                <img alt="  Post and V-Share image" src="Image 13.png" />
+                                <h3>
+                                    Post and V-Share
+                                </h3>
+                                <p>
+                                    Here you can create your view and boost your ideas though talents.
+                                </p>
+
+                            </div>
+                            <div class="blog">
+                                <img alt=" Call image" src="Image 14.png" />
+                                <h3>
+                                    Call
+                                </h3>
+                                <p>
+                                    We provide you high quality video and audio calls make your time enjoyable and share
+                                    your present life with someone.
+                                </p>
+
+                            </div>
+                            <div class="blog">
+                                <img alt=" Advance subscription image" src="Image 15.png" />
+                                <h3>
+                                    Advance subscription
+                                </h3>
+                                <p>
+                                </p>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <section class="about">
+                        <div class="about-container">
+                            <h2>About Univall</h2>
+                            <p>
+                                Univall is not just a company — it is the spark that will ignite the greatest
+                                transformation the tech
+                                world has ever seen. We are about to create something that will reshape the very
+                                foundations of the
+                                digital landscape, leaving an indelible mark on the future. This isn’t just a launch —
+                                it’s a revolution
+                                in the making.
+                            </p>
+                            <p>
+                                We are stepping into the arena where the giants fall, where the impossible becomes
+                                inevitable, and where
+                                history is rewritten. Univall will obliterate the status quo, break every barrier, and
+                                emerge as the
+                                driving force that redefines what’s possible in the digital world. Our vision is so
+                                powerful, it will
+                                make
+                                the world rethink everything it knows about innovation.
+                            </p>
+                            <p>
+                                What’s coming next will reshape industries, disrupt the strongest empires, and leave a
+                                legacy no one can
+                                match.
+                                Univall is not here to compete — we’re here to dominate, to change the course of
+                                history, and to build
+                                the
+                                future. Brace yourselves — the future is not coming; it’s already here, and it’s
+                                unstoppable.
+                            </p>
+
+
+
+
+                        </div>
+                    </section>
+
+
+
+
+                    <div class="bottom-bar">
+                        <div class="logo">
+                            <img alt="Univall logo" height="100" src="logo.jpg" width="100" />
+                            <p>
+                                Univall
+                            </p>
+                        </div>
+                        <a>
+
+
+
+
+                        </a>
+
+                        <div class="text-center mt-12">
+                            <p class="text-sm text-gray-400 mb-4">
+                                <span class="font-medium text-white">Univall™</span> is undergoing global legal
+                                incorporation &
+                                compliance proceedings.
+                            </p>
+                            <a href="univalllegal.html"
+                                class="inline-block px-6 py-2 border border-blue-400 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition duration-300">
+                                Know More →
+                            </a>
+                             <a href="childprivacyPolicy.html"
+                                class="inline-block px-6 py-2 border border-blue-400 text-blue-400 font-semibold rounded-full hover:bg-blue-500 hover:text-white transition duration-300">
+                                View Child Privacy Policy →
+                            </a>
+                        </div>
+
+                        <div class="infoo">
+                            <p>
+                                Contact us :
+                                <a href="mailto:univall@theunivall.com">
+                                    univall@theunivall.com
+                                </a>
+                            </p>
+
+                        </div>
+
+
+
+
+
+                        <div class="watermark">
+                            <p><strong>Univall™</strong> — A Pre-Incorporated Global Technology Company</p>
+                            <p>Legal, IP & Compliance Filings Actively in Process (India & International)</p>
+                            <p>© 2025 Univall. All Rights Reserved.</p>
+                        </div>
+
+
+
+                    </div>
+
+
+
+                    <script>
+                        const downloadBtn = document.getElementById('downloadBtn');
+                        const popup = document.getElementById('popup');
+                        const closeBtn = document.getElementById('closeBtn');
+
+                        downloadBtn.addEventListener('click', () => {
+                            popup.classList.remove('hidden');
+                        });
+
+                        closeBtn.addEventListener('click', () => {
+                            popup.classList.add('hidden');
+                        });
+
+
+                        window.onload = () => {
+                            document.getElementById("popupModal").style.display = "flex";
+                        };
+
+                        function goToSection(id) {
+                            document.getElementById("popupModal").style.display = "none";
+                            document.getElementById("hiringInvestorCards").scrollIntoView({ behavior: "smooth" });
+                        }
+
+
+
+
+
+
+
+
+                        const messages = [
+                            { id: 'bubble1', text: "Hey ! something you know about univall." },
+                            { id: 'bubble2', text: "No, what's about here to interesting features in this app?" },
+                            { id: 'bubble3', text: " okay i'll explain you.", icon: true },
+                            { id: 'bubble4', text: " Yaah sure", icon: true }
+                        ];
+
+                        let currentMessage = 0;
+
+                        function typeMessage(message, index, callback) {
+                            const element = document.getElementById(message.id);
+                            element.innerHTML = '';
+                            element.style.visibility = 'visible';
+                            let charIndex = 0;
+
+                            function typeChar() {
+                                if (charIndex < message.text.length) {
+                                    element.innerHTML += message.text.charAt(charIndex);
+                                    charIndex++;
+                                    setTimeout(typeChar, 50);
+
+                                } else {
+                                    if (callback) callback();
+                                }
+                            }
+
+                            typeChar();
+                        }
+
+                        function showNextMessage() {
+                            if (currentMessage < messages.length) {
+                                typeMessage(messages[currentMessage], currentMessage, () => {
+                                    currentMessage++;
+                                    setTimeout(showNextMessage, 500);
+                                });
+                            }
+                        }
+
+                        showNextMessage();
+
+
+                        document.addEventListener('DOMContentLoaded', function () {
+                            var options = {
+                                strings: [
+                                    "Univall is one such social media Indian app.",
+                                    "From where you can share your thoughts with your friends or family or share your daily activities through photos or videos.",
+                                    "We keep your privacy in mind through our new advance feature and connect you socially as per your convenience.",
+                                    "That news can also be received. we have provided you high security.",
+                                    "Univall is one such social media Indian app. From where you can share your thoughts with your friends or family or share your daily activities through photos or videos. We keep your privacy in mind through our new advance feature and connect you socially as per your convenience. That news can also be received. we have provided you high security."
+                                ],
+                                typeSpeed: 50,
+                                backSpeed: 25,
+                                loop: true,
+                                showCursor: false,
+                                smartBackspace: true,
+                                startDelay: 500,
+                                backDelay: 1000,
+                                onComplete: (self) => {
+                                    setTimeout(() => {
+                                        self.reset();
+                                    }, 2000);
+                                }
+                            };
+                            var typed = new Typed("#typed", options);
+                        });
+
+                        document.addEventListener("contextmenu", function (e) {
+                            e.preventDefault();
+                        })
+
+
+                        document.addEventListener("keydown", function (e) {
+                            if (e.ctrlKey && (e.key === "u" || e.key === "u")) {
+                                e.preventDefault();
+                            }
+
+
+                            if (e.ctrlKey && e.shiftKey && (e.key === "I" || e.key === "i")) {
+                                e.preventDefault();
+                            }
+                            if (e.key === "F12") {
+                                e.preventDefault();
+                            }
+                        })
+
+                        document.querySelectorAll('.card').forEach((card) => {
+                            const toggle = card.querySelector('.toggle-arrow');
+                            toggle.addEventListener('click', () => {
+                                card.classList.toggle('expanded');
+                            });
+                        });
+
+
+                    </script>
+
+
+
+
+
+</body>
+
+</html>

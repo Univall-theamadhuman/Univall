@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smooth Expandable Cards</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #121212, #0d0d0d);
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 40px 20px;
+      min-height: 100vh;
+    }
+
+  
+    
+  </style>
+</head>
+<body>
+
+  <!-- Card 1 -->
+  <div class="card">
+    <img src="https://source.unsplash.com/800x400/?forest" alt="Nature 1">
+    <div class="card-content">
+      <h2>Tranquil Forest</h2>
+      <p>Wander through peaceful paths filled with green whispers of nature.</p>
+    </div>
+    <div class="card-extra">
+      <p>Let the soft rustling of leaves and the chirping of birds guide your mind to stillness. A perfect retreat for reflection and healing.</p>
+    </div>
+    <div class="toggle-arrow">
+      <span class="arrow">⬇</span>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <img src="https://source.unsplash.com/800x400/?desert" alt="Nature 2">
+    <div class="card-content">
+      <h2>Golden Desert</h2>
+      <p>Vast, endless, and powerful — the silence of the desert inspires awe.</p>
+    </div>
+    <div class="card-extra">
+      <p>Feel the warmth of the dunes, the infinite skyline, and the meditative stillness that only a desert can provide.</p>
+    </div>
+    <div class="toggle-arrow">
+      <span class="arrow">⬇</span>
+    </div>
+  </div>
+
+  <!-- Add more cards easily -->
+
+  <script>
+    document.querySelectorAll('.card').forEach((card) => {
+      const toggle = card.querySelector('.toggle-arrow');
+      toggle.addEventListener('click', () => {
+        card.classList.toggle('expanded');
+      });
+    });
+  </script>
+
+</body>
+</html>
