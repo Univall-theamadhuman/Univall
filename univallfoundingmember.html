@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Univall – Founding Member</title>
 
   <style>
@@ -54,7 +55,7 @@
       margin: 0 auto 35px;
     }
 
-    .cta-btn {
+    .ctabtn {
       display: inline-block;
       padding: 16px 36px;
       background: linear-gradient(135deg, #6ca1f0, #3f4bf5);
@@ -65,7 +66,7 @@
       transition: 0.3s ease;
     }
 
-    .cta-btn:hover {
+    .ctabtn:hover {
       transform: translateY(-2px);
       box-shadow: 0 15px 30px rgba(108, 192, 240, 0.3);
     }
@@ -100,7 +101,7 @@
       background: #162c3b;
       padding: 30px;
       border-radius: 18px;
-      border: 1px solid rgba(255,255,255,0.05);
+      border: 1px solid rgba(255, 255, 255, 0.05);
       transition: 0.3s;
     }
 
@@ -149,8 +150,178 @@
       color: #ffffff;
     }
 
+
+
+
+    
+        /* Background blur overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(5px) brightness(0.7);
+            z-index: 998;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Form popup */
+        .form-popup {
+            display: none;
+            position: fixed;
+            top: -100%;
+            left: 50%;
+            transform: translateX(-50%) scale(0.8);
+            background-color: white;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            z-index: 999;
+            width: 95%;
+            max-width: 520px;
+            padding: 35px;
+            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            opacity: 0;
+        }
+
+        .form-popup.active {
+            display: block;
+            top: 50%;
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+        }
+
+        .form-popup h2 {
+            margin-top: 0;
+            color: #4f46e5;
+            text-align: center;
+            font-size: 28px;
+        }
+
+        .form-popup label {
+            display: block;
+            margin-top: 15px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-popup input,
+        .form-popup textarea {
+            width: 100%;
+            padding: 12px;
+            margin-top: 5px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            transition: border 0.3s;
+        }
+
+        .form-popup input:focus,
+        .form-popup textarea:focus {
+            border-color: #4f46e5;
+            outline: none;
+        }
+
+        .form-popup textarea {
+            resize: vertical;
+        }
+
+        /* Animated checkbox */
+        .agreement {
+            margin-top: 20px;
+            font-size: 14px;
+            display: flex;
+            align-items: center;
+        }
+
+        .agreement input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #4f46e5;
+            margin-right: 10px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .agreement input[type="checkbox"]:hover {
+            transform: scale(1.2);
+        }
+
+        .agreement a {
+            color: #4f46e5;
+            text-decoration: none;
+        }
+
+        .agreement a:hover {
+            text-decoration: underline;
+        }
+
+        /* Submit button */
+        .submit-btn {
+            margin-top: 25px;
+            width: 100%;
+            padding: 14px;
+            font-size: 20px;
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .submit-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Success popup */
+        .success-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.7);
+            background-color: #10b981;
+            color: white;
+            padding: 30px 40px;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            z-index: 1000;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 600;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+        .success-popup.active {
+            display: block;
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        /* Responsive */
+        @media(max-width: 600px) {
+            .form-popup h2 {
+                font-size: 24px;
+            }
+
+            .submit-btn {
+                font-size: 18px;
+            }
+        }
   </style>
 </head>
+
 <body>
 
   <div class="container">
@@ -163,8 +334,16 @@
         privacy, and meaningful connections — not noise.
         Support us before we go public.
       </p>
-      <a href="#" class="cta-btn">Become a Founding Member – ₹999</a>
+      <a class="ctabtn" id="openFormBtn">Become a Founding Member – ₹999</a>
     </div>
+
+
+
+
+
+
+
+
 
     <!-- WHY -->
     <div class="section">
@@ -236,6 +415,81 @@
 
   </div>
 
-</body>
-</html>
+  
+    <!-- Background Overlay -->
+    <div class="overlay" id="overlay"></div>
 
+    <!-- Form Popup -->
+    <div class="form-popup" id="memberForm">
+      <h2>Univall Founding Member Form</h2>
+      <form id="foundingForm">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+        <label for="city">City</label>
+        <input type="text" id="city" name="city" placeholder="Enter your city" required>
+
+        <label for="experience">Brief Experience / Bio</label>
+        <textarea id="experience" name="experience" placeholder="Tell us about yourself" rows="4" required></textarea>
+
+        <div class="agreement">
+          <input type="checkbox" id="agreement" required>
+          <label for="agreement">I agree to the <a href="#" target="_blank">Founding Member Agreement</a></label>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+
+   
+  <script>
+    const ctabtn = document.getElementById('openFormBtn');
+    const formPopup = document.getElementById('memberForm');
+    const overlay = document.getElementById('overlay');
+    const body = document.body;
+    const form = document.getElementById('foundingForm');
+    const successPopup = document.getElementById('successPopup');
+
+    ctabtn.addEventListener('click', () => {
+      formPopup.classList.add('active');
+      overlay.classList.add('active');
+      body.style.overflow = 'hidden';
+    });
+
+    overlay.addEventListener('click', () => {
+      formPopup.classList.remove('active');
+      overlay.classList.remove('active');
+      body.style.overflow = 'auto';
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      // Normally, send form data to your server here
+
+      formPopup.classList.remove('active');
+      overlay.classList.remove('active');
+      body.style.overflow = 'auto';
+
+      // Show success popup
+      successPopup.classList.add('active');
+
+      // Reset form
+      form.reset();
+
+      // Hide success popup after 3 seconds
+      setTimeout(() => {
+        successPopup.classList.remove('active');
+      }, 3000);
+    });
+  </script>
+
+</body>
+
+</html>
