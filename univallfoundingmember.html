@@ -153,171 +153,155 @@
 
 
 
+
+
+
     
-        /* Background blur overlay */
-        .overlay {
+       
+
+        /* Overlay */
+        #overlay {
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            backdrop-filter: blur(5px) brightness(0.7);
-            z-index: 998;
+            inset: 0;
+            background: rgba(0, 0, 0, .5);
+            backdrop-filter: blur(8px);
             display: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+
+            z-index: 10;
         }
 
-        .overlay.active {
-            display: block;
-            opacity: 1;
-        }
-
-        /* Form popup */
-        .form-popup {
-            display: none;
+        /* Form */
+        #formBox {
             position: fixed;
-            top: -100%;
-            left: 50%;
-            transform: translateX(-50%) scale(0.8);
-            background-color: white;
-            border-radius: 16px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            z-index: 999;
-            width: 95%;
-            max-width: 520px;
-            padding: 35px;
-            transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-            opacity: 0;
-        }
-
-        .form-popup.active {
-            display: block;
             top: 50%;
-            transform: translate(-50%, -50%) scale(1);
-            opacity: 1;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(.8);
+            width: 430px;
+            background: #0e1621;
+            color: #fff;
+            padding: 30px;
+            border-radius: 20px;
+            display: none;
+            z-index: 20;
+            animation: pop .4s forwards;
         }
 
-        .form-popup h2 {
-            margin-top: 0;
-            color: #4f46e5;
-            text-align: center;
-            font-size: 28px;
+        @keyframes pop {
+            to {
+                transform: translate(-50%, -50%) scale(1)
+            }
         }
 
-        .form-popup label {
-            display: block;
-            margin-top: 15px;
-            font-weight: 600;
-            color: #333;
-        }
-
-        .form-popup input,
-        .form-popup textarea {
+        input,
+        select {
             width: 100%;
             padding: 12px;
-            margin-top: 5px;
+            border: none;
             border-radius: 8px;
-            border: 1px solid #ccc;
-            font-size: 16px;
-            transition: border 0.3s;
+            margin-bottom: 10px;
         }
 
-        .form-popup input:focus,
-        .form-popup textarea:focus {
-            border-color: #4f46e5;
-            outline: none;
-        }
-
-        .form-popup textarea {
-            resize: vertical;
-        }
-
-        /* Animated checkbox */
-        .agreement {
-            margin-top: 20px;
-            font-size: 14px;
+        .row {
             display: flex;
-            align-items: center;
+            gap: 10px
         }
 
-        .agreement input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            accent-color: #4f46e5;
-            margin-right: 10px;
+        label {
+            font-size: 13px
+        }
+
+        .fileBox {
+            background: #1b263b;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+
+        .fileBox input {
+            color: #fff
+        }
+
+        .agree {
+            display: flex;
+            gap: 8px;
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .agree span {
+            color: #00c6ff;
             cursor: pointer;
-            transition: transform 0.3s;
         }
 
-        .agreement input[type="checkbox"]:hover {
-            transform: scale(1.2);
-        }
-
-        .agreement a {
-            color: #4f46e5;
-            text-decoration: none;
-        }
-
-        .agreement a:hover {
-            text-decoration: underline;
-        }
-
-        /* Submit button */
-        .submit-btn {
-            margin-top: 25px;
+        button.submit {
             width: 100%;
             padding: 14px;
-            font-size: 20px;
-            background: linear-gradient(45deg, #10b981, #059669);
-            color: white;
             border: none;
-            border-radius: 12px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #00c6ff, #0072ff);
+            color: #fff;
+            font-size: 16px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
 
-        .submit-btn:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-        }
-
-        /* Success popup */
-        .success-popup {
-            display: none;
+        /* Agreement Box */
+        #agreementBox {
             position: fixed;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%) scale(0.7);
-            background-color: #10b981;
-            color: white;
-            padding: 30px 40px;
-            border-radius: 16px;
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-            z-index: 1000;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            max-height: 70vh;
+            background: #0e1621;
+            color: #fff;
+            padding: 25px;
+            border-radius: 15px;
+            display: none;
+            z-index: 30;
+        }
+
+        #agreementBox div {
+            overflow-y: auto;
+            max-height: 45vh;
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: .9;
+        }
+
+        #agreementBox button {
+            margin-top: 15px;
+            padding: 10px 25px;
+            border: none;
+            border-radius: 30px;
+            background: #00c6ff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        /* Success */
+        #successBox {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 420px;
+            background: #0e1621;
+            color: #fff;
+            padding: 30px;
+            border-radius: 20px;
             text-align: center;
-            font-size: 20px;
-            font-weight: 600;
-            opacity: 0;
-            transition: all 0.4s ease;
+            display: none;
+            z-index: 40;
         }
 
-        .success-popup.active {
-            display: block;
-            opacity: 1;
-            transform: translate(-50%, -50%) scale(1);
-        }
-
-        /* Responsive */
-        @media(max-width: 600px) {
-            .form-popup h2 {
-                font-size: 24px;
-            }
-
-            .submit-btn {
-                font-size: 18px;
-            }
+        #successBox button {
+            margin-top: 20px;
+            padding: 12px 35px;
+            border: none;
+            border-radius: 30px;
+            background: #00c6ff;
+            color: #fff;
+            cursor: pointer;
         }
   </style>
 </head>
@@ -334,7 +318,7 @@
         privacy, and meaningful connections — not noise.
         Support us before we go public.
       </p>
-      <a class="ctabtn" id="openFormBtn">Become a Founding Member – ₹999</a>
+      <a class="ctabtn" onclick="openForm()" id="openFormBtn">Become a Founding Member – ₹999</a>
     </div>
 
 
@@ -415,80 +399,101 @@
 
   </div>
 
-  
-    <!-- Background Overlay -->
-    <div class="overlay" id="overlay"></div>
 
-    <!-- Form Popup -->
-    <div class="form-popup" id="memberForm">
-      <h2>Univall Founding Member Form</h2>
-      <form id="foundingForm">
-        <label for="fullName">Full Name</label>
-        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
 
-        <label for="email">Email Address</label>
-        <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <label for="phone">Phone Number</label>
-        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+  <div id="overlay"></div>
 
-        <label for="city">City</label>
-        <input type="text" id="city" name="city" placeholder="Enter your city" required>
+  <!-- FORM -->
+  <div id="formBox">
+    <h2>Founding Member Application</h2>
 
-        <label for="experience">Brief Experience / Bio</label>
-        <textarea id="experience" name="experience" placeholder="Tell us about yourself" rows="4" required></textarea>
+    <form onsubmit="submitForm(event)">
+      <input required placeholder="Full Name">
+      <input required type="number" placeholder="Age">
+      <input required type="email" placeholder="Email">
+      <input required type="tel" placeholder="Phone">
 
-        <div class="agreement">
-          <input type="checkbox" id="agreement" required>
-          <label for="agreement">I agree to the <a href="#" target="_blank">Founding Member Agreement</a></label>
-        </div>
+      <div class="row">
+        <input required placeholder="Country">
+        <input required placeholder="City">
+      </div>
 
-        <button type="submit" class="submit-btn">Submit</button>
-      </form>
+      <select required>
+        <option value="">Current Status</option>
+        <option>Student</option>
+        <option>Working Professional</option>
+        <option>Business Owner</option>
+      </select>
+
+      <input placeholder="Highest Qualification / Degree">
+
+      <div class="fileBox">
+        <label>Upload Government ID</label>
+        <input required type="file">
+      </div>
+
+      <div class="agree">
+        <input type="checkbox" required>
+        <label>I agree to the <span onclick="openAgreement()">Agreement</span></label>
+      </div>
+
+      <button class="submit">Submit Application</button>
+    </form>
+  </div>
+
+  <!-- AGREEMENT -->
+  <div id="agreementBox">
+    <h3>Founding Member Agreement</h3>
+    <div>
+      By submitting this application, you acknowledge that all information
+      provided is accurate. Selection as a Founding Member is subject to
+      review. Shortlisted candidates will receive official communication
+      via registered email including founder introduction and participation
+      details. Fees, once paid, are non-refundable. Any misuse of information
+      or misrepresentation may result in immediate disqualification.
     </div>
+    <button onclick="closeAgreement()">Close</button>
+  </div>
 
-   
+  <!-- SUCCESS -->
+  <div id="successBox">
+    <h2>Application Submitted ✅</h2>
+    <p>
+      Your details have been successfully received.<br><br>
+      If shortlisted, you will receive an official email containing:
+      Founder introduction, confirmation & secure payment instructions.
+    </p>
+    <button onclick="goHome()">Close</button>
+  </div>
+
   <script>
-    const ctabtn = document.getElementById('openFormBtn');
-    const formPopup = document.getElementById('memberForm');
-    const overlay = document.getElementById('overlay');
-    const body = document.body;
-    const form = document.getElementById('foundingForm');
-    const successPopup = document.getElementById('successPopup');
-
-    ctabtn.addEventListener('click', () => {
-      formPopup.classList.add('active');
-      overlay.classList.add('active');
-      body.style.overflow = 'hidden';
-    });
-
-    overlay.addEventListener('click', () => {
-      formPopup.classList.remove('active');
-      overlay.classList.remove('active');
-      body.style.overflow = 'auto';
-    });
-
-    form.addEventListener('submit', (e) => {
+    function openForm() {
+      overlay.style.display = "block";
+      formBox.style.display = "block";
+    }
+    function openAgreement() {
+      agreementBox.style.display = "block";
+    }
+    function closeAgreement() {
+      agreementBox.style.display = "none";
+    }
+    function submitForm(e) {
       e.preventDefault();
-
-      // Normally, send form data to your server here
-
-      formPopup.classList.remove('active');
-      overlay.classList.remove('active');
-      body.style.overflow = 'auto';
-
-      // Show success popup
-      successPopup.classList.add('active');
-
-      // Reset form
-      form.reset();
-
-      // Hide success popup after 3 seconds
-      setTimeout(() => {
-        successPopup.classList.remove('active');
-      }, 3000);
-    });
+      formBox.style.display = "none";
+      successBox.style.display = "block";
+    }
+    function goHome() {
+      window.location.href = "index.html";
+    }
   </script>
+
+
+
+
+
+
+
 
 </body>
 
