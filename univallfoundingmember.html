@@ -156,153 +156,153 @@
 
 
 
-    
-       
 
-        /* Overlay */
-        #overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, .5);
-            backdrop-filter: blur(8px);
-            display: none;
 
-            z-index: 10;
-        }
 
-        /* Form */
-        #formBox {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%) scale(.8);
-            width: 430px;
-            background: #0e1621;
-            color: #fff;
-            padding: 30px;
-            border-radius: 20px;
-            display: none;
-            z-index: 20;
-            animation: pop .4s forwards;
-        }
+    /* Overlay */
+    #overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .5);
+      backdrop-filter: blur(8px);
+      display: none;
 
-        @keyframes pop {
-            to {
-                transform: translate(-50%, -50%) scale(1)
-            }
-        }
+      z-index: 10;
+    }
 
-        input,
-        select {
-            width: 100%;
-            padding: 12px;
-            border: none;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
+    /* Form */
+    #formBox {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(.8);
+      width: 430px;
+      background: #0e1621;
+      color: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      display: none;
+      z-index: 20;
+      animation: pop .4s forwards;
+    }
 
-        .row {
-            display: flex;
-            gap: 10px
-        }
+    @keyframes pop {
+      to {
+        transform: translate(-50%, -50%) scale(1)
+      }
+    }
 
-        label {
-            font-size: 13px
-        }
+    input,
+    select {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
 
-        .fileBox {
-            background: #1b263b;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 10px;
-        }
+    .row {
+      display: flex;
+      gap: 10px
+    }
 
-        .fileBox input {
-            color: #fff
-        }
+    label {
+      font-size: 13px
+    }
 
-        .agree {
-            display: flex;
-            gap: 8px;
-            font-size: 13px;
-            margin-bottom: 12px;
-        }
+    .fileBox {
+      background: #1b263b;
+      padding: 12px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
 
-        .agree span {
-            color: #00c6ff;
-            cursor: pointer;
-        }
+    .fileBox input {
+      color: #fff
+    }
 
-        button.submit {
-            width: 100%;
-            padding: 14px;
-            border: none;
-            border-radius: 10px;
-            background: linear-gradient(135deg, #00c6ff, #0072ff);
-            color: #fff;
-            font-size: 16px;
-            cursor: pointer;
-        }
+    .agree {
+      display: flex;
+      gap: 8px;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
 
-        /* Agreement Box */
-        #agreementBox {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 500px;
-            max-height: 70vh;
-            background: #0e1621;
-            color: #fff;
-            padding: 25px;
-            border-radius: 15px;
-            display: none;
-            z-index: 30;
-        }
+    .agree span {
+      color: #00c6ff;
+      cursor: pointer;
+    }
 
-        #agreementBox div {
-            overflow-y: auto;
-            max-height: 45vh;
-            font-size: 14px;
-            line-height: 1.6;
-            opacity: .9;
-        }
+    button.submit {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #00c6ff, #0072ff);
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+    }
 
-        #agreementBox button {
-            margin-top: 15px;
-            padding: 10px 25px;
-            border: none;
-            border-radius: 30px;
-            background: #00c6ff;
-            color: #fff;
-            cursor: pointer;
-        }
+    /* Agreement Box */
+    #agreementBox {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      max-height: 70vh;
+      background: #0e1621;
+      color: #fff;
+      padding: 25px;
+      border-radius: 15px;
+      display: none;
+      z-index: 30;
+    }
 
-        /* Success */
-        #successBox {
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 420px;
-            background: #0e1621;
-            color: #fff;
-            padding: 30px;
-            border-radius: 20px;
-            text-align: center;
-            display: none;
-            z-index: 40;
-        }
+    #agreementBox div {
+      overflow-y: auto;
+      max-height: 45vh;
+      font-size: 14px;
+      line-height: 1.6;
+      opacity: .9;
+    }
 
-        #successBox button {
-            margin-top: 20px;
-            padding: 12px 35px;
-            border: none;
-            border-radius: 30px;
-            background: #00c6ff;
-            color: #fff;
-            cursor: pointer;
-        }
+    #agreementBox button {
+      margin-top: 15px;
+      padding: 10px 25px;
+      border: none;
+      border-radius: 30px;
+      background: #00c6ff;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* Success */
+    #successBox {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 420px;
+      background: #0e1621;
+      color: #fff;
+      padding: 30px;
+      border-radius: 20px;
+      text-align: center;
+      display: none;
+      z-index: 40;
+    }
+
+    #successBox button {
+      margin-top: 20px;
+      padding: 12px 35px;
+      border: none;
+      border-radius: 30px;
+      background: #00c6ff;
+      color: #fff;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -408,33 +408,33 @@
   <div id="formBox">
     <h2>Founding Member Application</h2>
 
-    <form onsubmit="submitForm(event)">
-      <input required placeholder="Full Name">
-      <input required type="number" placeholder="Age">
-      <input required type="email" placeholder="Email">
-      <input required type="tel" placeholder="Phone">
+    <form id="foundingForm" onsubmit="submitForm(event)">
+      <input required placeholder="Full Name" id="name">
+      <input required type="number" placeholder="Age" id="age">
+      <input required type="email" placeholder="Email" id="email">
+      <input required type="tel" placeholder="Phone" id="phone">
 
       <div class="row">
-        <input required placeholder="Country">
-        <input required placeholder="City">
+        <input required placeholder="Country" id="country">
+        <input required placeholder="City" id="city">
       </div>
 
-      <select required>
+      <select required id="status">
         <option value="">Current Status</option>
         <option>Student</option>
         <option>Working Professional</option>
         <option>Business Owner</option>
       </select>
 
-      <input placeholder="Highest Qualification / Degree">
+      <input placeholder="Highest Qualification / Degree" id="qualification">
 
-      <div class="fileBox">
+      <div class="fileBox" id="govtId">
         <label>Upload Government ID</label>
         <input required type="file">
       </div>
 
       <div class="agree">
-        <input type="checkbox" required>
+        <input type="checkbox" required id="agree">
         <label>I agree to the <span onclick="openAgreement()">Agreement</span></label>
       </div>
 
@@ -485,6 +485,45 @@
     }
     function goHome() {
       window.location.href = "index.html";
+    }
+
+
+
+    async function submitForm(e) {
+      e, preventDefault();
+
+      const formData = new FormData();
+
+      formData.append("name", document.getElementById("name").value);
+      formData.append("age", document.getElementById("age").value);
+      formData.append("email", document.getElementById("email").value);
+      formData.append("phone", document.getElementById("phone").value);
+      formData.append("country", document.getElementById("country").value);
+      formData.append("city", document.getElementById("city").value);
+      formData.append("status", document.getElementById("status").value);
+      formData.append("qualification", document.getElementById("qualification").value);
+      formData.append("agree", document.getElementById("agree").checked);
+
+      const file = document.getElementById("govId").files[0];
+      formData.append("govId", file);
+
+      try {
+        const res = await fetch("http://locall:3000/api/founding-member", {
+          method: "POST",
+          body: formData
+        });
+
+        if (res.ok) {
+          document.getElementById("formBox").style.display = "none";
+          document.getElementById("successBox").style.display = "block";
+          document.getElementById("founndingForm").reset();
+        } else {
+          alert("Something went wrong");
+        }
+      } catch (err) {
+        alert("Server error");
+        console.error(err);
+      }
     }
   </script>
 
