@@ -2,126 +2,461 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Univall – Founding Member</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Founding Contribution • UNIVALL</title>
+
+
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
+    :root {
+      --brand: #6a5cff;
+      --accent: #00e5c3;
+      --bg: #0a0d1a;
+      --glass: rgba(255, 255, 255, 0.08);
+      --border: rgba(255, 255, 255, 0.15);
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      font-family: 'Poppins', sans-serif;
     }
 
     body {
-      background: #0b0f1a;
-      color: #ffffff;
-      line-height: 1.6;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(106, 92, 255, 0.18), transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(0, 156, 229, 0.15), transparent 40%),
+        var(--bg);
+      color: #fff;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    /* ===== HEADER ===== */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(10, 13, 26, 0.795);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
     }
 
-    /* ---------- CONTAINER ---------- */
-    .container {
-      max-width: 1100px;
+    .nav {
+      max-width: 1200px;
       margin: auto;
-      padding: 60px 20px;
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      border-radius: 3px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 50);
     }
 
-    /* ---------- HERO ---------- */
+    .nav img {
+      height: 36px;
+    }
+
+    .nav span {
+      font-size: 0.85rem;
+      opacity: 0.7;
+       filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.548));
+    }
+
+    /* ===== HERO ===== */
     .hero {
+      min-height: 100vh;
+      padding: 120px 20px 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      margin-bottom: 80px;
+    }
+
+    .hero-inner {
+      max-width: 820px;
+      animation: fadeUp 1s ease;
     }
 
     .hero h1 {
-      font-size: 3rem;
+      font-size: 3.1rem;
       font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .hero h1 span {
-      color: #6caaf0;
+      background: linear-gradient(135deg, #fff, var(--accent));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+       filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.548));
     }
 
     .hero p {
-      font-size: 1.1rem;
-      color: #b5b8c5;
-      max-width: 700px;
-      margin: 0 auto 35px;
+      margin-top: 20px;
+      opacity: 0.85;
+      line-height: 1.8;
     }
 
-    .ctabtn {
-      display: inline-block;
-      padding: 16px 36px;
-      background: linear-gradient(135deg, #6ca1f0, #3f4bf5);
-      color: #0b0f1a;
-      font-weight: 600;
-      font-size: 1.05rem;
-      border-radius: 40px;
-      transition: 0.3s ease;
-    }
-
-    .ctabtn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 15px 30px rgba(108, 192, 240, 0.3);
-    }
-
-    /* ---------- SECTION ---------- */
-    .section {
-      margin-bottom: 80px;
-    }
-
-    .section h2 {
-      font-size: 2.1rem;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .section p {
-      color: #b5b8c5;
-      text-align: center;
-      max-width: 800px;
-      margin: auto;
-    }
-
-    /* ---------- FEATURES ---------- */
-    .features {
+    /* ===== CARDS ===== */
+    .slabs {
+      max-width: 1200px;
+      margin: 80px auto;
+      padding: 0 20px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
-      margin-top: 50px;
     }
 
     .card {
-      background: #162c3b;
-      padding: 30px;
-      border-radius: 18px;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      transition: 0.3s;
+      background: var(--glass);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 40px 30px;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+      transition: 0.4s ease;
     }
 
     .card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(108, 192, 240, 0.4);
+      transform: translateY(-16px) scale(1.04);
     }
 
     .card h3 {
+      font-size: 1.55rem;
+    }
+
+    .price {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin: 16px 0 22px;
+    }
+
+    .card ul {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .card ul li {
       margin-bottom: 12px;
-      font-size: 1.2rem;
-      color: #6caaf0;
+      opacity: 0.9;
     }
 
-    .card p {
-      font-size: 0.95rem;
-      color: #b5b8c5;
+    .card button {
+      width: 100%;
+      padding: 16px;
+      border: none;
+      border-radius: 16px;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
     }
 
-    /* ---------- LIMITED ---------- */
+    /* ===== INFO ===== */
+    .section {
+      max-width: 950px;
+      margin: 80px auto;
+      padding: 0 20px;
+    }
+
+    .section h2 {
+      margin-bottom: 14px;
+    }
+
+    .section p {
+      opacity: 0.85;
+      line-height: 1.9;
+    }
+
+    /* ===== POPUP ===== */
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.75);
+      backdrop-filter: blur(8px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 2000;
+    }
+
+    .popup {
+      background: #0f142e;
+      border: 1px solid var(--border);
+      padding: 32px;
+      border-radius: 22px;
+      width: 92%;
+      max-width: 420px;
+      animation: scaleIn 0.35s ease;
+    }
+
+    .popup h3 {
+      margin-bottom: 14px;
+    }
+
+    .popup input {
+      width: 100%;
+      padding: 14px;
+      margin-bottom: 12px;
+      border: none;
+      border-radius: 12px;
+    }
+
+    .popup label {
+      font-size: 0.8rem;
+      opacity: 0.8;
+      display: block;
+      margin-top: 6px;
+    }
+
+    .popup button {
+      width: 100%;
+      margin-top: 16px;
+      padding: 15px;
+      border: none;
+      border-radius: 14px;
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      color: #fff;
+      cursor: pointer;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      margin-top: 100px;
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.85rem;
+      opacity: 0.65;
+      border-top: 1px solid var(--border);
+    }
+
+    /* ===== ANIM ===== */
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.85);
+      }
+
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .loggo {
+
+
+      display: block;
+       filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.548));
+     border-radius: 6.99px;
+    }
+
+
+
+
+
+
+    :root {
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      min-height: 200vh;
+    }
+
+    /* FLOATING BUTTON */
+    #feedbackBtn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 50px;
+      cursor: pointer;
+      animation: float 2s infinite ease-in-out;
+       filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.548));
+      z-index: 999;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+      font-size: 14px;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-8px)
+      }
+
+      100% {
+        transform: translateY(0)
+      }
+    }
+
+    /* OVERLAY WITH BLUR */
+    #over-lay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.35);
+
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+
+       filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.548));
+      z-index: 9999;
+      padding: 16px;
+
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 100);
+    }
+
+    /* POPUP */
+    #pop-up {
+      width: 100%;
+      max-width: 520px;
+      max-height: 90vh;
+      background: linear-gradient(to right,#313f496e,#7d7f8069 );
+            
+      backdrop-filter: blur(10px);
+
+      border-radius: var(--radius);
+      padding: 22px;
+      overflow-y: auto;
+      animation: scaleIn .35s ease;
+      box-shadow: 0 25px 50px rgba(14, 13, 13, 0.3);
+    }
+
+    @keyframes scaleIn {
+      from {
+        transform: scale(.9);
+        opacity: 0
+      }
+
+      to {
+        transform: scale(1);
+        opacity: 1
+      }
+    }
+
+    /* HEADER */
+    #pop-up h3 {
+      margin: 0;
+      font-size: 22px;
+      text-align: center;
+      color: #000;
+        text-shadow: 0 4px 18px rgba(0, 0, 0, 150) ;
+    }
+
+    #pop-up p.info {
+      margin: 8px 0 18px;
+      text-align: center;
+      font-size: 14px;
+      color: #ccc4c4;
+    }
+
+    /* QUESTIONS */
+    .question {
+      margin-bottom: 14px;
+    }
+
+    .question label {
+      font-size: 13px;
+      font-weight: 600;
+      display: block;
+      margin-bottom: 6px;
+      font-style: oblique;
+      color: #030303;
+
+        
+    }
+
+    .question textarea {
+      width: 100%;
+      min-height: 70px;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      resize: none;
+      outline: none;
+
+       
+    }
+
+    /* SUBMIT */
+    button {
+      width: 100%;
+      padding: 14px;
+      margin-top: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      border-radius: 14px;
+      cursor: pointer;
+
+      background: linear-gradient(135deg, var(--brand), var(--accent));
+      color: #fff;
+    }
+
+    button:disabled {
+      opacity: .6;
+      cursor: not-allowed;
+    }
+
+    /* MOBILE OPTIMIZATION */
+    @media(max-width:480px) {
+      #popup {
+        padding: 18px;
+        max-height: 88vh;
+      }
+
+      #pop-up h3 {
+        font-size: 20px;
+      }
+
+      .question textarea {
+        min-height: 60px;
+      }
+    }
+
+    /* LARGE SCREENS */
+    @media(min-width:900px) {
+      #pop-up {
+        max-width: 600px;
+      }
+    }
+
+
+
+
+
+        /* ---------- LIMITED ---------- */
     .limited {
       background: linear-gradient(135deg, #11162a, #0b0f1a);
       border-radius: 20px;
@@ -138,398 +473,242 @@
       font-weight: 600;
     }
 
-    /* ---------- FOOTER NOTE ---------- */
-    .note {
-      margin-top: 50px;
-      font-size: 0.9rem;
-      color: #9aa0b3;
-      text-align: center;
-    }
-
-    .note strong {
-      color: #ffffff;
-    }
-
-
-
-
-
-
-
-
-
-
-    /* Overlay */
-    #overlay {
-      position: fixed;
-      inset: 0;
-      background: rgba(0, 0, 0, .5);
-      backdrop-filter: blur(8px);
-      display: none;
-
-      z-index: 10;
-    }
-
-    /* Form */
-    #formBox {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%) scale(.8);
-      width: 430px;
-      background: #0e1621;
-      color: #fff;
-      padding: 30px;
-      border-radius: 20px;
-      display: none;
-      z-index: 20;
-      animation: pop .4s forwards;
-    }
-
-    @keyframes pop {
-      to {
-        transform: translate(-50%, -50%) scale(1)
-      }
-    }
-
-    input,
-    select {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .row {
-      display: flex;
-      gap: 10px
-    }
-
-    label {
-      font-size: 13px
-    }
-
-    .fileBox {
-      background: #1b263b;
-      padding: 12px;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .fileBox input {
-      color: #fff
-    }
-
-    .agree {
-      display: flex;
-      gap: 8px;
-      font-size: 13px;
-      margin-bottom: 12px;
-    }
-
-    .agree span {
-      color: #00c6ff;
-      cursor: pointer;
-    }
-
-    button.submit {
-      width: 100%;
-      padding: 14px;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(135deg, #00c6ff, #0072ff);
-      color: #fff;
-      font-size: 16px;
-      cursor: pointer;
-    }
-
-    /* Agreement Box */
-    #agreementBox {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 500px;
-      max-height: 70vh;
-      background: #0e1621;
-      color: #fff;
-      padding: 25px;
-      border-radius: 15px;
-      display: none;
-      z-index: 30;
-    }
-
-    #agreementBox div {
-      overflow-y: auto;
-      max-height: 45vh;
-      font-size: 14px;
-      line-height: 1.6;
-      opacity: .9;
-    }
-
-    #agreementBox button {
-      margin-top: 15px;
-      padding: 10px 25px;
-      border: none;
-      border-radius: 30px;
-      background: #00c6ff;
-      color: #fff;
-      cursor: pointer;
-    }
-
-    /* Success */
-    #successBox {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 420px;
-      background: #0e1621;
-      color: #fff;
-      padding: 30px;
-      border-radius: 20px;
-      text-align: center;
-      display: none;
-      z-index: 40;
-    }
-
-    #successBox button {
-      margin-top: 20px;
-      padding: 12px 35px;
-      border: none;
-      border-radius: 30px;
-      background: #00c6ff;
-      color: #fff;
-      cursor: pointer;
-    }
   </style>
 </head>
 
+
+
 <body>
 
-  <div class="container">
 
-    <!-- HERO -->
-    <div class="hero">
-      <h1>Become a <span>Founding Member</span> of Univall</h1>
+
+
+  <header>
+    <div class="nav">
+      <img class="loggo" src="logo.jpg" alt="UNIVALL">
+      <span>Founding Members</span>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Build UNIVALL With Us</h1>
       <p>
-        Univall is building a next-generation social platform focused on trust,
+        UNIVALL is an MSME-registered technology platform.
+        Become a Founding Contributor and support the foundation
+        of a long-term digital ecosystem.
+
+          Univall is building a next-generation social platform focused on trust,
         privacy, and meaningful connections — not noise.
         Support us before we go public.
       </p>
-      <a class="ctabtn" onclick="openForm()" id="openFormBtn">Become a Founding Member – ₹999</a>
+      
     </div>
+  </section>
 
+  <section class="slabs">
+    <div class="card">
+      <h3> Founding Member</h3>
+      <div class="price">₹1199</div>
+      <ul>
+        <li>✔ Founding Recognition</li>
+        <li>✔ Early Access</li>
+        <li>✔ Lifetime Badge</li>
+        <li>✔ Priority Features</li>
+        <li>✔ Direct Feedback Channel</li> 
+        <li>✔ Wall of Founders</li>
+      
 
+      </ul>
+      <button onclick="openPopup(1199)">Continue</button>
+  </section>
 
-
-
-
-
-
-
-    <!-- WHY -->
-    <div class="section">
-      <h2>Why Founding Members Exist</h2>
-      <p>
-        Great platforms are not built alone. Founding Members are early supporters
-        who believe in Univall’s vision and help shape the product from day one.
-      </p>
-    </div>
-
-    <!-- FEATURES -->
-    <div class="section">
-      <h2>What You Get</h2>
-
-      <div class="features">
-        <div class="card">
-          <h3>Early App Access</h3>
-          <p>
-            Get access to Univall before the public launch.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Lifetime Founding Badge</h3>
-          <p>
-            A permanent badge on your profile showing you were here from the start.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Priority Features</h3>
-          <p>
-            Early access to new features and experiments.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Direct Feedback Channel</h3>
-          <p>
-            Your voice matters. Share ideas directly with the Univall team.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Wall of Founders</h3>
-          <p>
-            Your name listed on our website as a Founding Member.
-          </p>
-        </div>
-      </div>
-    </div>
-
-    <!-- LIMITED -->
-    <div class="section limited">
+   <div class="section limited">
       <h2>Limited Availability</h2>
       <p>
         Only <span>280 Founding Member passes</span> will ever be released.
         Once closed, this offer will never return.
       </p>
-    </div>
-
-    <!-- TRUST NOTE -->
-    <div class="note">
-      <p>
-        <strong>Important:</strong> This is not an investment.
-        This is an early supporter access pass to help build Univall.
-      </p>
-    </div>
-
   </div>
 
 
-
-
-  <div id="overlay"></div>
-
-  <!-- FORM -->
-  <div id="formBox">
-    <h2>Founding Member Application</h2>
-
-    <form id="foundingForm" onsubmit="submitForm(event)">
-      <input required placeholder="Full Name" id="name">
-      <input required type="number" placeholder="Age" id="age">
-      <input required type="email" placeholder="Email" id="email">
-      <input required type="tel" placeholder="Phone" id="phone">
-
-      <div class="row">
-        <input required placeholder="Country" id="country">
-        <input required placeholder="City" id="city">
-      </div>
-
-      <select required id="status">
-        <option value="">Current Status</option>
-        <option>Student</option>
-        <option>Working Professional</option>
-        <option>Business Owner</option>
-      </select>
-
-      <input placeholder="Highest Qualification / Degree" id="qualification">
-
-      <div class="fileBox" id="govtId">
-        <label>Upload Government ID</label>
-        <input required type="file">
-      </div>
-
-      <div class="agree">
-        <input type="checkbox" required id="agree">
-        <label>I agree to the <span onclick="openAgreement()">Agreement</span></label>
-      </div>
-
-      <button class="submit">Submit Application</button>
-    </form>
-  </div>
-
-  <!-- AGREEMENT -->
-  <div id="agreementBox">
-    <h3>Founding Member Agreement</h3>
-    <div>
-      By submitting this application, you acknowledge that all information
-      provided is accurate. Selection as a Founding Member is subject to
-      review. Shortlisted candidates will receive official communication
-      via registered email including founder introduction and participation
-      details. Fees, once paid, are non-refundable. Any misuse of information
-      or misrepresentation may result in immediate disqualification.
-    </div>
-    <button onclick="closeAgreement()">Close</button>
-  </div>
-
-  <!-- SUCCESS -->
-  <div id="successBox">
-    <h2>Application Submitted ✅</h2>
+  <section class="section">
+    <h2>Legal Notice</h2>
     <p>
-      Your details have been successfully received.<br><br>
-      If shortlisted, you will receive an official email containing:
-      Founder introduction, confirmation & secure payment instructions.
+      The Founding Contribution Program is a voluntary early-support initiative.
+      Contributions do not represent an investment and do not provide equity,
+      ownership, profit-sharing, or voting rights. Contributions are non-refundable.
     </p>
-    <button onclick="goHome()">Close</button>
+
+    <br>
+    <h2>Use of Funds</h2>
+    <p>
+      Funds may be used for technology infrastructure, development, servers,
+      security, legal compliance, and operational growth.
+    </p>
+  </section>
+
+   
+
+
+
+
+
+
+  <!-- POPUP -->
+  <div class="overlay" id="overlay">
+    <div class="popup" onclick="event.stopPropagation()">
+      <h3>Confirm Contribution</h3>
+      <input type="text" placeholder="Full Name">
+      <input type="email" placeholder="Email Address">
+      <input type="tel" placeholder="Phone Number">
+      <input id="amount" readonly>
+      <label>
+        <input type="checkbox"> I understand this is not an investment.
+      </label>
+      <button onclick="goToPayment()">Proceed to Payment</button>
+    </div>
   </div>
 
+
+
+
+
+
+  <footer>
+    © 2026 UNIVALL • MSME Registered Entity
+  </footer>
+
+  <!-- FLOATING BUTTON -->
+  <div id="feedbackBtn" onclick="openFeedback()">💬 Give Feedback</div>
+
+  <!-- FEEDBACK MODAL -->
+  <div id="over-lay">
+    <div id="pop-up">
+      <h3>Feed to Univall </h3>
+      <p class="info">Please answer all questions to continue</p>
+
+      <div class="question">
+        <label>1. How did you feel after visiting the Univall Website?</label>
+        <textarea id="q1" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div class="question">
+        <label>2. Did you find the Univall Website different from others?</label>
+        <textarea id="q2" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div class="question">
+        <label>3. How excited are you about the Univall App?</label>
+        <textarea id="q3" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div class="question">
+        <label>4. What features would you like to see in the Univall App?</label>
+        <textarea id="q4" placeholder="Your answer..."></textarea>
+      </div>
+
+      <div class="question">
+        <label>5. What is your overall opinion about the Univall Website and the Univall App?</label>
+        <textarea id="q5" placeholder="Your answer..."></textarea>
+      </div>
+
+      <button id="submitBtn" onclick="sendFeedback()">Feedback send to Univall </button>
+    </div>
+  </div>
+
+
+
+  <!-- EMAILJS -->
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script>
-    function openForm() {
-      overlay.style.display = "block";
-      formBox.style.display = "block";
-    }
-    function openAgreement() {
-      agreementBox.style.display = "block";
-    }
-    function closeAgreement() {
-      agreementBox.style.display = "none";
-    }
-    function submitForm(e) {
-      e.preventDefault();
-      formBox.style.display = "none";
-      successBox.style.display = "block";
-    }
-    function goHome() {
-      window.location.href = "index.html";
+    /* 🔑 ADD YOUR REAL EMAILJS KEYS */
+    emailjs.init("R99x3CyGAALHeVUZJ");
+
+    function openFeedback() {
+      document.getElementById("over-lay").style.display = "flex";
     }
 
+    function sendFeedback() {
+      const answers = [
+        q1.value.trim(),
+        q2.value.trim(),
+        q3.value.trim(),
+        q4.value.trim(),
+        q5.value.trim()
+      ];
 
-
-    async function submitForm(e) {
-      e, preventDefault();
-
-      const formData = new FormData();
-
-      formData.append("name", document.getElementById("name").value);
-      formData.append("age", document.getElementById("age").value);
-      formData.append("email", document.getElementById("email").value);
-      formData.append("phone", document.getElementById("phone").value);
-      formData.append("country", document.getElementById("country").value);
-      formData.append("city", document.getElementById("city").value);
-      formData.append("status", document.getElementById("status").value);
-      formData.append("qualification", document.getElementById("qualification").value);
-      formData.append("agree", document.getElementById("agree").checked);
-
-      const file = document.getElementById("govId").files[0];
-      formData.append("govId", file);
-
-      try {
-        const res = await fetch("http://locall:3000/api/founding-member", {
-          method: "POST",
-          body: formData
-        });
-
-        if (res.ok) {
-          document.getElementById("formBox").style.display = "none";
-          document.getElementById("successBox").style.display = "block";
-          document.getElementById("founndingForm").reset();
-        } else {
-          alert("Something went wrong");
-        }
-      } catch (err) {
-        alert("Server error");
-        console.error(err);
+      if (answers.some(a => !a)) {
+        alert("Please answer all questions");
+        return;
       }
+
+      const btn = document.getElementById("submitBtn");
+      btn.innerText = "Sending...";
+      btn.disabled = true;
+
+      const message = `
+1. How did you feel after visiting the website?
+${answers[0]}
+
+2. Did you find the website different from others?
+${answers[1]}
+
+3. How excited are you about the app?
+${answers[2]}
+
+4. What features would you like to see in the app?
+${answers[3]}
+
+5. What is your overall opinion about the website and the app?
+${answers[4]}
+`;
+
+      emailjs.send("service_1fnvkqc", "template_djopw3w", {
+        message: message,
+        device: navigator.userAgent
+      }).then(() => {
+        btn.innerText = "Submitted ✔";
+        setTimeout(() => {
+          document.getElementById("over-lay").style.display = "none";
+        }, 900);
+      }).catch(() => {
+        alert("Email service not configured");
+        btn.innerText = "Feedback send to Univall";
+        btn.disabled = false;
+      });
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function openPopup(amount) {
+      const overlay = document.getElementById("overlay");
+      document.getElementById("amount").value = "₹ " + amount;
+      overlay.style.display = "flex";
+    }
+
+    document.getElementById("overlay").addEventListener("click", () => {
+      document.getElementById("overlay").style.display = "none";
+    });
+
+    function goToPayment() {
+      alert("Payment gateway yahan connect hoga (Razorpay / Cashfree)");
+    }
+
+
+
   </script>
-
-
-
-
 
 
 
